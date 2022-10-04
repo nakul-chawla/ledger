@@ -18,8 +18,9 @@ function App() {
 
   useEffect(() => {
     cleanData();
-  },[]);
+  },[cleanData]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function cleanData(){
     // here we are cleaning the array by removing the duplicate id's
     var clean = simple_ledger.filter((simple_ledger, index, self) =>
