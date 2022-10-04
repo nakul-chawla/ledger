@@ -37,16 +37,16 @@ function App() {
 
   function toMakeDescription(obj){
     let message="";
-    if(obj["type"] == "DEPOSIT"){
+    if(obj["type"] === "DEPOSIT"){
       message = obj["method"] + " Deposit for investment";
-    }else if(obj["type"] == "INVESTMENT"){
+    }else if(obj["type"] === "INVESTMENT"){
       message = "Investment in " + obj["destination"]["type"] +" "+obj["destination"]["description"];  
-    }else if(obj["type"] == "REFUND"){
+    }else if(obj["type"] === "REFUND"){
       message = "Refund from " + obj["source"]["type"] + " " + obj["source"]["description"] 
-    }else if(obj["type"] == "WITHDRAWAL"){
+    }else if(obj["type"] === "WITHDRAWAL"){
       message = "Withdrawal for " + obj["destination"]["type"] + " " + obj["destination"]["description"]
-    }else if(obj["type"] == "TRANSFER"){
-      if(obj["source"]["type"] == "INVESTOR"){
+    }else if(obj["type"] === "TRANSFER"){
+      if(obj["source"]["type"] === "INVESTOR"){
         message = "Transfer to " + obj["destination"]["type"]
       }else{
         message = "Transfer from " + obj["source"]["type"] + " " + obj["source"]["description"] 
@@ -76,7 +76,7 @@ function App() {
 
   return (
     <div className="App">
-      {data.length == 0 ? (<p>Trying</p>) :
+      {data.length === 0 ? (<p>Trying</p>) :
         (<div>
               <h1>
       Your investing account
