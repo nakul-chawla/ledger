@@ -1,4 +1,10 @@
 terraform {
+      cloud {
+        organization = "davinci-board"
+        workspaces {
+          name = "medium-learn-workspace"
+        }
+      }
   required_providers {
     aws = {
       source = "hashicorp/aws"
